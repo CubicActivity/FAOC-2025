@@ -19,6 +19,7 @@
 # Group 1: {1, 2, 3} (Size 3)
 # Group 2: {4, 5} (Size 2)
 # Result: 3
+
 def dfs(node, graph, visited):
     stack = [node]
     count = 0
@@ -29,29 +30,23 @@ def dfs(node, graph, visited):
             visited.add(current)
             count += 1
             stack.extend(graph[current] - visited)
-
     return count
 
 def main():
     with open("user_input.txt", "r") as f:
         line = f.readline().strip()
-
     pairs = line.split(",")
-
     graph = {}
 
     for pair in pairs:
         a, b = pair.split("-")
         graph.setdefault(a, set()).add(b)
         graph.setdefault(b, set()).add(a)
-
     visited = set()
     max_group = 0
-
     for user in graph:
         if user not in visited:
             max_group = max(max_group, dfs(user, graph, visited))
-
     print(max_group)
 
 if __name__ == "__main__":
