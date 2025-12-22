@@ -1,3 +1,35 @@
+# BONUS: System Override: The Kernel Panic
+# FATAL ERROR.
+#
+# The Dean's message is trapped inside the Kernel's execution layer. You have dumped the raw function calls from the memory stack.
+#
+# To retrieve the message, you must implement an interpreter for the FINKI Kernel Language (FKL).
+#
+# Supported Functions:
+#
+#     HEX(s): Decodes a Hexadecimal string into ASCII. (e.g., HEX(4869) -> "Hi")
+#
+# REV(s): Reverses the string. (e.g., REV(ABC) -> "CBA")REP(n, s): Repeats the string s, n times.CAT(s1, s2, ...): Concatenates multiple strings.Nesting: Functions can be nested arbitrarily deep.
+# Input Format:
+# A single string representing a nested function call.
+#
+# Input Example:
+# CAT(REP(2, REV(HEX(4f454e))), _WAKE_UP)
+#
+# Execution Trace:
+#
+#     HEX(4f454e) -> "NEO"
+#
+# REV("NEO") -> "OEN"REP(2, "OEN") -> "OENOEN"CAT("OENOEN", "_WAKE_UP") -> "OENOEN_WAKE_UP"
+# Your Task:
+# Evaluate the expression and return the final string.
+# Example Input:
+#CAT(REP(2,REV(HEX(4f454e))),_WAKE_UP)
+# output:
+# Explanation: OENOEN_WAKE_UP
+
+
+
 #just strips the expression from white space
 def evaluate(expr):
     expr = expr.strip()
