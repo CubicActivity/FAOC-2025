@@ -24,7 +24,7 @@
 # Your Task:
 # Evaluate the expression and return the final string.
 # Example Input:
-#CAT(REP(2,REV(HEX(4f454e))),_WAKE_UP)
+# CAT(REP(2,REV(HEX(4f454e))),_WAKE_UP)
 # output:
 # Explanation: OENOEN_WAKE_UP
 
